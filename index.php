@@ -37,9 +37,20 @@ include('config.php');
         }
         .videocontainer{
             text-align: center;
+            background-color: rgb(228, 228, 228);
+            padding-top: 15px;
+            border-radius: 50px 50px 0px 0px;
+            padding-bottom: 15px;
         }
         .videocontent{
             margin-left: 15px;
+        }
+        .videocontentcontainer{
+            border: 2px solid grey;
+            padding-bottom: 15px;
+            border-radius: 50px;
+            margin-right: 15px;
+            
         }
         .videocontentcontainer div{
             border: 1px solid grey;
@@ -47,6 +58,8 @@ include('config.php');
             display: flex;
             margin-left: 50px;
             margin-right: 50px;
+            border-radius: 50px;
+            margin-top: 15px;
         }
         .videocontentcontainer div form button i{
             margin-top: 4px;
@@ -56,6 +69,15 @@ include('config.php');
             background-color: transparent;
             border: none;
             cursor: pointer;
+        }
+        #myVideo{
+            border-radius: 15px;
+        }
+        #rightcontainer{
+            border: 2px solid grey;
+            margin-left: 15px;
+            margin-right: 15px;
+            border-radius: 50px;
         }
     </style>
 </head>
@@ -71,7 +93,6 @@ include('config.php');
             <div class="videocontainer">
                 <video id="myVideo" src="videos/<?php echo $row['videosrc'];  ?>" controls controlsList="nodownload" autoplay muted width="550px"></video>
             </div>
-            <br>
             <hr>
             <br>
             <div class="videocontent">
