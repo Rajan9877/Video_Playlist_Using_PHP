@@ -20,8 +20,10 @@
         }
         .container{
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            height: 100vh;
         }
         .container form{
             display: flex;
@@ -67,10 +69,48 @@
         input[type="text"]{
             border: 1px solid red;
         }
+        nav{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            background-color: white;
+            z-index: 1000;
+        }
+        nav div{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            color: red;
+        }
+        nav div div a{
+            text-decoration: none;
+            color: red;
+            transition: all 0.5s;
+        }
+        nav div div a:hover{
+            color: black;
+        }
+        footer{
+            background-color: red;
+            margin-top: 30px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 7px;
+        }
     </style>
 </head>
 <body>
-    <h1 class="heading">Upload Video To Add In The Playlist</h1>
+    <nav>
+        <div>
+            <div><a href="http://localhost/playlist"><h3>Playlist</h3></a></div>
+        </div>
+    </nav>
+    <div class="container">
+    <h2 class="heading">Upload Video To Add In The Playlist</h2>
     <?php
     include("../config.php");
     if(isset($_POST['upload'])){
@@ -91,16 +131,18 @@
         
     }
     ?>
-    <div class="container">
-        <form action="" method="post" enctype="multipart/form-data">
-            <label for="title">Title : </label>
-            <input type="text" name="title" id="title" placeholder="Enter Video Title">
-            <label for="description">Description : </label>
-            <input type="text" name="description" id="description" placeholder="Enter Video Description">
-            <label for="video">Video : </label>
-            <input type="file" name="filetoupload" id="video">
-            <button class="btn" name="upload">Upload</button>
-        </form>
+    <form action="" method="post" enctype="multipart/form-data">
+        <label for="title">Title : </label>
+        <input type="text" name="title" id="title" placeholder="Enter Video Title">
+        <label for="description">Description : </label>
+        <input type="text" name="description" id="description" placeholder="Enter Video Description">
+        <label for="video">Video : </label>
+        <input type="file" name="filetoupload" id="video">
+        <button class="btn" name="upload">Upload</button>
+    </form>
     </div>
+    <footer>
+        <div>Copyright &copy; <?php echo date('Y'); ?> | Created By Rajan</div>
+    </footer>
 </body>
 </html>

@@ -21,7 +21,7 @@ include('config.php');
         }
         .heading{
             text-align: center;
-            margin-top: 15px;
+            margin-top: 70px;
             margin-bottom: 15px;
         }
         .container{
@@ -79,9 +79,47 @@ include('config.php');
             margin-right: 15px;
             border-radius: 50px;
         }
+        nav{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            background-color: white;
+            z-index: 1000;
+        }
+        nav div{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            color: red;
+        }
+        nav div div a{
+            text-decoration: none;
+            color: red;
+            transition: all 0.5s;
+        }
+        nav div div a:hover{
+            color: black;
+        }
+        footer{
+            background-color: red;
+            margin-top: 30px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 7px;
+        }
     </style>
 </head>
 <body>
+    <nav>
+        <div>
+            <div><h3>Playlist</h3></div>
+            <div><a href="http://localhost/playlist/upload/">Upload Video</a></div>
+        </div>
+    </nav>
     <h1 class="heading">Video Playlist</h1>
     <div class="container">
         <div class="right" id="rightcontainer">
@@ -126,6 +164,9 @@ include('config.php');
             </div>
         </div>
     </div>
+    <footer>
+        <div>Copyright &copy; <?php echo date('Y'); ?> | Created By Rajan</div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
     var video = document.getElementById("myVideo");
